@@ -8,7 +8,7 @@ import Product from '../pages/Product';
 
 const Products = () => {
     const navigate = useNavigate();
-    const handleOnClick = useCallback(() => navigate('/product', {replace: true}), [navigate]);
+    const handleOnClick =(produ) => {navigate('/product', {state:produ});}
 
     const dispatch = useDispatch();
     const { data: products, status } = useSelector((state) => state.product);
@@ -43,7 +43,7 @@ const Products = () => {
                     <img src={product.image} alt="" />
                     <h4>{product.title}</h4>
                     <h5>{product.price}</h5>
-                    <button onClick={handleOnClick} className="btn">
+                    <button onClick={()=>handleOnClick(product)} className="btn">
                         View Product
                     </button>
                     <button onClick={() => handleAdd(product)} className="btn">
