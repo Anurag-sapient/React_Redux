@@ -1,7 +1,7 @@
 import { getNodeText } from '@testing-library/react';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { remove } from '../store/cartSlice';
+import { remove } from '../reducer/cartSlice';
 
 const Cart = () => {
     const dispatch = useDispatch();
